@@ -149,7 +149,7 @@ cd front-end-trainee-v2-0
 | Módulo | Estado | Fecha Inicio | Fecha Fin | Proyecto Principal |
 |--------|--------|--------------|-----------|-------------------|
 | M1 | 🔄 Preparado | - | - | Orientación y Metodología |
-| M2 | 🔄 Preparado | - | - | Fundamentos Web + Git |
+| M2 | ⚡ Iniciado | 18/10/2025 | - | Fundamentos Web + Git |
 | M3 | 🔄 Preparado | - | - | CSS Avanzado + Frameworks |
 | M4 | ✅ Completado | 17/10/2025 | 17/10/2025 | **Proyecto Integrador I** |
 | M5 | 🔄 Preparado | - | - | JavaScript Avanzado |
@@ -157,6 +157,48 @@ cd front-end-trainee-v2-0
 | M7 | 🔄 Preparado | - | - | **Proyecto Final Integrado** |
 | M8 | 🔄 Preparado | - | - | Portafolio Profesional |
 | M9 | 🔄 Preparado | - | - | Plan de Empleabilidad |
+
+---
+
+## 📚 Material Educativo: M2 - Fundamentos Web
+
+### 📖 **HTML5 Semántico - Material Completo para Estudiantes**
+
+El **Módulo 2** ha sido enriquecido con material educativo completo y profesional, diseñado específicamente para estudiantes que están comenzando su viaje en el desarrollo web.
+
+#### 🎓 **Contenido Educativo Creado:**
+- **📚 Guía Teórica Completa:** `Notas_HTML_Semantico.md` (1,349+ líneas de contenido)
+- **💻 Ejemplo Práctico Funcional:** `ejemplo-html-semantico.html` con CSS responsive
+- **📋 Guía de Estudio:** `README.md` con metodología de aprendizaje estructurada
+
+#### 📖 **Características del Material:**
+- **Estructura Progresiva:** Desde conceptos básicos hasta implementación avanzada
+- **Ejemplos Comentados:** Código explicado línea por línea para mejor comprensión
+- **Enfoque en Accesibilidad:** WCAG guidelines integradas desde el principio
+- **Ejercicios Graduales:** Niveles principiante, intermedio y avanzado
+- **Herramientas Profesionales:** Recomendaciones de VS Code, extensiones y recursos
+- **Lista de Verificación:** Autoevaluación con criterios claros de aprendizaje
+
+#### 🎯 **Objetivos de Aprendizaje Definidos:**
+- ✅ Conceptos fundamentales de HTML5 y semántica web
+- ✅ Estructura correcta de documentos HTML
+- ✅ Elementos semánticos y su uso apropiado
+- ✅ Formularios accesibles con validación HTML5
+- ✅ Integración multimedia responsiva
+- ✅ Buenas prácticas y optimización SEO básica
+
+#### 📅 **Cronograma de Estudio:**
+- **Estimación:** 16-22 horas de estudio completo
+- **Distribución:** 6 días con actividades específicas
+- **Evaluación:** Proyecto final con criterios de evaluación definidos
+
+#### 🔗 **Ubicación del Material:**
+```
+M2_Fundamentos_Web_y_Git/01_HTML_Semantico/
+├── Notas_HTML_Semantico.md        # 📖 Guía teórica completa
+├── ejemplo-html-semantico.html    # 💻 Ejemplo práctico
+└── README.md                      # 📋 Guía de estudio
+```
 
 ---
 
@@ -225,7 +267,16 @@ M4_Practica_Integradora/
 
 ## 📈 **Últimas Actualizaciones**
 
-### 🎉 **17 de Octubre, 2025**
+### � **18 de Octubre, 2025**
+- ⚡ **M2 Iniciado:** Material completo de HTML5 semántico creado
+- 📚 **Material Educativo:** Guía completa de 1,349+ líneas de contenido
+- 📖 **Notas Didácticas:** Teoría completa desde conceptos básicos hasta avanzados
+- 💻 **Ejemplo Práctico:** HTML funcional con CSS responsivo integrado
+- 📋 **Guía de Estudio:** README con objetivos, ejercicios y cronograma
+- ♿ **Enfoque en Accesibilidad:** WCAG guidelines y mejores prácticas
+- 🎯 **Estructura Pedagógica:** Niveles graduales (principiante a avanzado)
+
+### �🎉 **17 de Octubre, 2025**
 - ✅ **M4 Completado:** Proyecto Integrador con diseño moderno implementado
 - 🎨 **CSS Avanzado:** Variables personalizadas, gradientes y animaciones
 - ⚡ **JavaScript ES6+:** Interactividad moderna con Intersection Observer
@@ -233,9 +284,11 @@ M4_Practica_Integradora/
 - 📱 **Responsive:** Design móvil-first con breakpoints optimizados
 
 ### 🔄 **Próximos Pasos**
-- **M5:** Iniciar Programación Avanzada con JavaScript (POO, APIs, Asincronismo)
+- **M2:** Continuar con CSS Responsive y FlexGrid (02_CSS_Responsive_FlexGrid)
+- **M2:** JavaScript básico y DOM manipulation (03_JS_Introduccion_DOM)
+- **M2:** Git y prácticas de colaboración (04_Git_Practicas_Colaboracion)
+- **M5:** Programación Avanzada con JavaScript (POO, APIs, Asincronismo)
 - **M6:** Desarrollo de aplicación Vue.js base
-- **M7:** Proyecto final integrado con Vuex y testing
 
 ---
 
