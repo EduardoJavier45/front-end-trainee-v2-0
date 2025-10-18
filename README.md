@@ -151,12 +151,55 @@ cd front-end-trainee-v2-0
 | M1 | 🔄 Preparado | - | - | Orientación y Metodología |
 | M2 | 🔄 Preparado | - | - | Fundamentos Web + Git |
 | M3 | 🔄 Preparado | - | - | CSS Avanzado + Frameworks |
-| M4 | ⚡ Iniciado | 17/10/2025 | - | **Proyecto Integrador I** |
+| M4 | ✅ Completado | 17/10/2025 | 17/10/2025 | **Proyecto Integrador I** |
 | M5 | 🔄 Preparado | - | - | JavaScript Avanzado |
 | M6 | 🔄 Preparado | - | - | **Aplicación Vue.js Base** |
 | M7 | 🔄 Preparado | - | - | **Proyecto Final Integrado** |
 | M8 | 🔄 Preparado | - | - | Portafolio Profesional |
 | M9 | 🔄 Preparado | - | - | Plan de Empleabilidad |
+
+---
+
+## 🎯 Proyecto Destacado: M4 - Práctica Integradora
+
+### ✨ **Proyecto Integrador I - Sitio Web Moderno y Minimalista**
+
+El **Módulo 4** representa el primer hito importante del curso, integrando todos los conocimientos adquiridos en los módulos M2 y M3. Se ha desarrollado un sitio web completo con las siguientes características:
+
+#### 🎨 **Características de Diseño**
+- **CSS Moderno:** Variables CSS personalizadas (`--custom-properties`)
+- **Responsive Design:** Enfoque mobile-first con breakpoints optimizados
+- **Gradientes y Efectos:** Diseño visual moderno con sombras sutiles
+- **Tipografía:** Fuente Inter de Google Fonts para legibilidad profesional
+- **Animaciones:** Transiciones fluidas con `@keyframes` y `transform`
+
+#### ♿ **Accesibilidad y UX**
+- **WCAG Compliance:** Cumple estándares de accesibilidad web
+- **Modo Oscuro:** Soporte automático con `prefers-color-scheme`
+- **Estados de Focus:** Navegación optimizada por teclado
+- **Movimiento Reducido:** Respeta `prefers-reduced-motion`
+
+#### ⚡ **Funcionalidad JavaScript**
+- **ES6+ Features:** Arrow functions, template literals, destructuring
+- **Intersection Observer:** Animaciones al hacer scroll
+- **Event Handling:** Interactividad moderna y eficiente
+- **Console Styling:** Logging mejorado para debugging
+
+#### 📁 **Estructura del Proyecto**
+```
+M4_Practica_Integradora/
+├── index.html          # HTML5 semántico mejorado ✅
+├── css/
+│   └── styles.css      # CSS moderno y escalable ✅
+├── js/
+│   └── main.js         # JavaScript ES6+ interactivo ✅
+└── assets/             # Recursos multimedia (preparado)
+```
+
+#### 🚀 **Demo y Código**
+- **📂 Código Fuente:** [Ver en GitHub](./M4_Practica_Integradora/)
+- **🌐 Vista Previa:** Abre `M4_Practica_Integradora/index.html` en tu navegador
+- **📋 Commits:** Seguimiento completo del desarrollo con Conventional Commits
 
 ---
 
@@ -180,4 +223,34 @@ cd front-end-trainee-v2-0
 
 ---
 
-Este repositorio es un reflejo del progreso y aprendizaje continuo en el desarrollo front-end. ¡Cada commit es un paso hacia la meta profesional! 🎯
+## 📈 **Últimas Actualizaciones**
+
+### 🎉 **17 de Octubre, 2025**
+- ✅ **M4 Completado:** Proyecto Integrador con diseño moderno implementado
+- 🎨 **CSS Avanzado:** Variables personalizadas, gradientes y animaciones
+- ⚡ **JavaScript ES6+:** Interactividad moderna con Intersection Observer
+- ♿ **Accesibilidad:** Cumplimiento WCAG y soporte para preferencias del usuario
+- 📱 **Responsive:** Design móvil-first con breakpoints optimizados
+
+### 🔄 **Próximos Pasos**
+- **M5:** Iniciar Programación Avanzada con JavaScript (POO, APIs, Asincronismo)
+- **M6:** Desarrollo de aplicación Vue.js base
+- **M7:** Proyecto final integrado con Vuex y testing
+
+---
+
+## 🤝 **Contribuciones y Feedback**
+
+Este repositorio documenta el viaje de aprendizaje en desarrollo front-end. Si tienes sugerencias o feedback:
+
+1. **Issues:** Reporta problemas o sugerencias
+2. **Pull Requests:** Contribuciones son bienvenidas
+3. **Discussions:** Comparte experiencias de aprendizaje
+
+---
+
+**Este repositorio es un reflejo del progreso y aprendizaje continuo en el desarrollo front-end. ¡Cada commit es un paso hacia la meta profesional!** 🎯
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Ready-success?style=flat&logo=github)](https://github.com/EduardoJavier45/front-end-trainee-v2-0)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Commits](https://img.shields.io/github/commit-activity/w/EduardoJavier45/front-end-trainee-v2-0)](https://github.com/EduardoJavier45/front-end-trainee-v2-0/commits/main)
