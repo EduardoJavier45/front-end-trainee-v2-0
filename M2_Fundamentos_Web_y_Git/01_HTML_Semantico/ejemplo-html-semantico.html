@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo práctico de HTML5 semántico para el curso Front-End Trainee v2.0">
+    <meta name="author" content="Front-End Trainee v2.0">
+    <title>Ejemplo Práctico - HTML5 Semántico | M2</title>
+    
+    <!-- Estilos básicos para mejor visualización -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+        
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        section, article, aside {
+            background-color: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #e5e7eb;
+        }
+        
+        form {
+            background-color: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem 0;
+            font-weight: bold;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        
+        footer {
+            background-color: #374151;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .content-area {
+            grid-column: 1;
+        }
+        
+        .sidebar {
+            grid-column: 2;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-area, .sidebar {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado principal del sitio -->
+    <header>
+        <h1>🎓 Ejemplo Práctico de HTML5 Semántico</h1>
+        <p>Módulo M2 - Fundamentos Web y Git | Front-End Trainee v2.0</p>
+        
+        <!-- Navegación principal -->
+        <nav>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#elementos">Elementos</a></li>
+                <li><a href="#formulario">Formulario</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main>
+        <!-- Área de contenido principal -->
+        <div class="content-area">
+            <!-- Sección de introducción -->
+            <section id="introduccion">
+                <header>
+                    <h2>Introducción a HTML Semántico</h2>
+                    <time datetime="2025-10-18">18 de Octubre, 2025</time>
+                </header>
+                
+                <p>
+                    Este documento demuestra el uso correcto de <strong>elementos semánticos HTML5</strong>. 
+                    La semántica web es fundamental para crear sitios web <em>accesibles</em>, 
+                    <mark>optimizados para SEO</mark> y fáciles de mantener.
+                </p>
+                
+                <blockquote cite="https://www.w3.org/standards/semanticweb/">
+                    "La Web Semántica es una extensión de la Web actual en la que la información 
+                    tiene un significado bien definido, lo que permite a las computadoras y 
+                    personas trabajar mejor en cooperación."
+                    <footer>— <cite>W3C</cite></footer>
+                </blockquote>
+            </section>
+
+            <!-- Artículo independiente -->
+            <article id="elementos">
+                <header>
+                    <h2>Elementos HTML Fundamentales</h2>
+                    <p class="meta">Por: <strong>Instructor Front-End</strong></p>
+                </header>
+
+                <h3>Lista de Elementos Importantes:</h3>
+                <ul>
+                    <li><code>&lt;header&gt;</code> - Encabezado de página o sección</li>
+                    <li><code>&lt;nav&gt;</code> - Navegación principal</li>
+                    <li><code>&lt;main&gt;</code> - Contenido principal único</li>
+                    <li><code>&lt;section&gt;</code> - Sección temática</li>
+                    <li><code>&lt;article&gt;</code> - Contenido independiente</li>
+                    <li><code>&lt;aside&gt;</code> - Contenido relacionado</li>
+                    <li><code>&lt;footer&gt;</code> - Pie de página</li>
+                </ul>
+
+                <h3>Tabla de Compatibilidad:</h3>
+                <table>
+                    <caption>Soporte de Elementos HTML5 en Navegadores</caption>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Chrome</th>
+                            <th>Firefox</th>
+                            <th>Safari</th>
+                            <th>Edge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&lt;header&gt;</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;nav&gt;</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;main&gt;</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                            <td>✅ Soportado</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Ejemplo de Código:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;p&gt;Contenido principal&lt;/p&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <footer>
+                    <p><small>Última actualización: <time datetime="2025-10-18">18 de Octubre, 2025</time></small></p>
+                </footer>
+            </article>
+
+            <!-- Sección de formulario -->
+            <section id="formulario">
+                <h2>Formulario de Contacto</h2>
+                <p>Completa el siguiente formulario para enviar tus comentarios:</p>
+
+                <form action="#" method="POST">
+                    <fieldset>
+                        <legend>Información Personal</legend>
+                        
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required 
+                               placeholder="Ej: Juan Pérez">
+                        
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="ejemplo@correo.com">
+                        
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" 
+                               placeholder="+1 (555) 123-4567">
+                        
+                        <label for="nacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="nacimiento" name="nacimiento">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Preferencias</legend>
+                        
+                        <label for="curso">Curso de interés:</label>
+                        <select id="curso" name="curso">
+                            <option value="">Selecciona un curso</option>
+                            <option value="html">HTML y CSS</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="react">React.js</option>
+                            <option value="vue">Vue.js</option>
+                        </select>
+                        
+                        <fieldset>
+                            <legend>Modalidad preferida:</legend>
+                            <input type="radio" id="presencial" name="modalidad" value="presencial">
+                            <label for="presencial">Presencial</label>
+                            
+                            <input type="radio" id="virtual" name="modalidad" value="virtual">
+                            <label for="virtual">Virtual</label>
+                            
+                            <input type="radio" id="hibrida" name="modalidad" value="hibrida">
+                            <label for="hibrida">Híbrida</label>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>Servicios de interés:</legend>
+                            <input type="checkbox" id="cursos" name="servicios" value="cursos">
+                            <label for="cursos">Cursos online</label>
+                            
+                            <input type="checkbox" id="mentoria" name="servicios" value="mentoria">
+                            <label for="mentoria">Mentoría personalizada</label>
+                            
+                            <input type="checkbox" id="certificacion" name="servicios" value="certificacion">
+                            <label for="certificacion">Certificación</label>
+                        </fieldset>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Mensaje</legend>
+                        
+                        <label for="asunto">Asunto *</label>
+                        <input type="text" id="asunto" name="asunto" required 
+                               placeholder="Breve descripción del tema">
+                        
+                        <label for="mensaje">Comentarios *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required 
+                                  placeholder="Escribe aquí tu mensaje..."></textarea>
+                    </fieldset>
+
+                    <button type="submit">📤 Enviar mensaje</button>
+                    <button type="reset">🗑️ Limpiar formulario</button>
+                </form>
+            </section>
+
+            <!-- Sección de multimedia -->
+            <section id="multimedia">
+                <h2>Elementos Multimedia</h2>
+                
+                <h3>Imagen con Descripción</h3>
+                <figure>
+                    <img src="https://via.placeholder.com/400x200/2563eb/ffffff?text=HTML5" 
+                         alt="Logo de HTML5 sobre fondo azul" 
+                         width="400" height="200">
+                    <figcaption>
+                        Figura 1: Logo representativo de HTML5, el estándar moderno para 
+                        estructurar contenido web.
+                    </figcaption>
+                </figure>
+
+                <h3>Audio (Ejemplo)</h3>
+                <audio controls>
+                    <source src="#" type="audio/mpeg">
+                    <p>Tu navegador no soporta el elemento audio. 
+                       <a href="#">Descargar el archivo de audio</a>.</p>
+                </audio>
+
+                <h3>Video (Ejemplo)</h3>
+                <video controls width="400" height="225" poster="https://via.placeholder.com/400x225/374151/ffffff?text=Video">
+                    <source src="#" type="video/mp4">
+                    <track src="#" kind="subtitles" srclang="es" label="Español">
+                    <p>Tu navegador no soporta el elemento video. 
+                       <a href="#">Ver el video en YouTube</a>.</p>
+                </video>
+            </section>
+        </div>
+
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <aside>
+                <h3>📚 Recursos de Aprendizaje</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML">MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/html/">W3Schools HTML</a></li>
+                    <li><a href="https://validator.w3.org/">HTML Validator</a></li>
+                    <li><a href="https://caniuse.com/">Can I Use</a></li>
+                </ul>
+            </aside>
+
+            <aside>
+                <h3>🎯 Objetivos de Aprendizaje</h3>
+                <ol>
+                    <li>Comprender la importancia de la semántica</li>
+                    <li>Dominar la estructura básica HTML5</li>
+                    <li>Usar elementos semánticos correctamente</li>
+                    <li>Crear formularios accesibles</li>
+                    <li>Implementar multimedia responsiva</li>
+                </ol>
+            </aside>
+
+            <aside>
+                <h3>💡 Consejos Importantes</h3>
+                <ul>
+                    <li><strong>Siempre</strong> incluye el atributo <code>alt</code> en imágenes</li>
+                    <li><strong>Usa</strong> solo un <code>&lt;h1&gt;</code> por página</li>
+                    <li><strong>Asocia</strong> labels con inputs en formularios</li>
+                    <li><strong>Valida</strong> tu HTML regularmente</li>
+                    <li><strong>Piensa</strong> en accesibilidad desde el inicio</li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <address>
+            <p>📧 Contacto: <a href="mailto:contacto@front-end-trainee.com">contacto@front-end-trainee.com</a></p>
+            <p>📍 Ubicación: Curso Online - Modalidad Virtual</p>
+        </address>
+        
+        <p>&copy; 2025 Front-End Trainee v2.0. Todos los derechos reservados.</p>
+        <p>
+            <small>
+                Desarrollado con ❤️ para estudiantes de desarrollo web. 
+                Última actualización: <time datetime="2025-10-18">18 de Octubre, 2025</time>
+            </small>
+        </p>
+    </footer>
+</body>
+</html>
