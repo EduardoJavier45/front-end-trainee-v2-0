@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ejercicio de HTML Semántico - Lección 2"
+    />
+    <title>Lección 2 - Ejercicio 1: HTML Semántico</title>
+  </head>
+  <body>
+    <!-- 
+        HEADER: Encabezado principal de la página
+        Uso: Contiene elementos introductorios y de navegación del sitio.
+        Generalmente incluye el logo, título del sitio y menú de navegación.
+        Aparece al inicio de la página o de una sección específica.
+    -->
+    <header>
+      <!-- 
+            H1: Encabezado de nivel 1 (el más importante)
+            Uso: Representa el título principal de la página.
+            Debe ser único en la página (idealmente uno por documento).
+            Establece la jerarquía de contenido más alta.
+        -->
+      <h1>HTML Semántico: Fundamentos y Buenas Prácticas</h1>
+
+      <!-- 
+            P: Párrafo de texto
+            Uso: Define un bloque de texto como un párrafo.
+            Es la etiqueta más común para contenido textual.
+            Crea automáticamente espaciado antes y después del texto.
+        -->
+      <p>Aprende a estructurar contenido web de forma correcta y accesible</p>
+
+      <nav>
+        <ul>
+          <li><a href="#introduccion">Introducción</a></li>
+          <li><a href="#importancia">Importancia</a></li>
+          <li><a href="#ejemplos">Ejemplos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 
+        MAIN: Contenedor del contenido principal
+        Uso: Engloba el contenido principal y único del documento.
+        Solo debe haber un elemento <main> por página.
+        No debe incluirse dentro de header, footer, aside, nav o article.
+        Representa el contenido dominante del documento.
+    -->
+    <main>
+      <!-- 
+            SECTION: Sección temática del documento
+            Uso: Agrupa contenido relacionado por tema específico.
+            Representa una sección genérica de un documento o aplicación.
+            Debe contener un encabezado (h1-h6) para identificar su contenido.
+            Se usa para dividir el contenido en bloques lógicos.
+        -->
+      <section id="introduccion">
+        <h2>¿Qué es HTML Semántico?</h2>
+
+        <p>
+          HTML Semántico es el uso de etiquetas HTML que proporcionan
+          significado al contenido que envuelven, más allá de simplemente
+          definir su presentación visual. Estas etiquetas comunican la
+          estructura y el propósito del contenido a los navegadores, motores de
+          búsqueda y tecnologías de asistencia.
+        </p>
+
+        <p>
+          En lugar de usar elementos genéricos como div y span para todo, HTML
+          semántico utiliza etiquetas específicas como header, nav, article,
+          section, y footer que describen claramente qué tipo de contenido
+          contienen.
+        </p>
+      </section>
+
+      <section id="importancia">
+        <h2>¿Por qué es importante el HTML Semántico?</h2>
+
+        <p>
+          El HTML semántico ofrece múltiples beneficios tanto para
+          desarrolladores como para usuarios finales. A continuación, exploramos
+          las razones principales para utilizarlo:
+        </p>
+
+        <!-- 
+                ARTICLE: Contenido independiente y auto-contenido
+                Uso: Representa una composición independiente en un documento.
+                Debe tener sentido por sí mismo y poder ser distribuido independientemente.
+                Ejemplos: publicación de blog, artículo de periódico, comentario de usuario, widget.
+                Puede contener su propio header, footer y otras secciones.
+            -->
+        <article>
+          <h3>Accesibilidad Mejorada</h3>
+
+          <p>
+            Las tecnologías de asistencia, como los lectores de pantalla
+            utilizados por personas con discapacidades visuales, dependen de la
+            estructura semántica para interpretar y comunicar el contenido de
+            manera efectiva.
+          </p>
+
+          <p>
+            Con HTML semántico, los usuarios pueden navegar más fácilmente entre
+            diferentes secciones del contenido, entender la jerarquía de la
+            información y acceder al contenido principal sin tener que recorrer
+            elementos irrelevantes.
+          </p>
+        </article>
+
+        <article>
+          <h3>Mejor Posicionamiento en Buscadores (SEO)</h3>
+
+          <p>
+            Los motores de búsqueda como Google utilizan algoritmos sofisticados
+            que analizan la estructura semántica de las páginas web para
+            comprender su contenido y clasificarlas adecuadamente.
+          </p>
+
+          <p>
+            Una página bien estructurada con HTML semántico tiene más
+            probabilidades de aparecer en los resultados de búsqueda relevantes,
+            ya que los bots pueden identificar claramente qué partes del
+            contenido son más importantes.
+          </p>
+        </article>
+
+        <article>
+          <h3>Código Más Mantenible</h3>
+
+          <p>
+            El HTML semántico hace que el código sea más legible y
+            autodocumentado. Cuando un desarrollador ve una etiqueta article o
+            aside, inmediatamente comprende el propósito de ese bloque de
+            contenido sin necesidad de leer comentarios extensos.
+          </p>
+
+          <p>
+            Esto facilita el trabajo en equipo, reduce errores y acelera el
+            proceso de desarrollo y mantenimiento de sitios web.
+          </p>
+        </article>
+      </section>
+
+      <section id="ejemplos">
+        <h2>Ejemplos de Etiquetas Semánticas</h2>
+
+        <p>
+          HTML5 introdujo numerosas etiquetas semánticas que mejoran la
+          estructura del contenido. Aquí presentamos las más utilizadas:
+        </p>
+
+        <article>
+          <h3>Etiquetas Estructurales</h3>
+
+          <p>
+            Estas son las etiquetas principales para organizar el documento:
+          </p>
+
+          <ul>
+            <li><strong>header:</strong> Encabezado de la página o sección</li>
+            <li><strong>nav:</strong> Navegación principal del sitio</li>
+            <li><strong>main:</strong> Contenido principal del documento</li>
+            <li><strong>section:</strong> Sección temática agrupada</li>
+            <li>
+              <strong>article:</strong> Contenido independiente y reutilizable
+            </li>
+            <li>
+              <strong>aside:</strong> Contenido relacionado o complementario
+            </li>
+            <li>
+              <strong>footer:</strong> Pie de página con información adicional
+            </li>
+          </ul>
+        </article>
+
+        <article>
+          <h3>Jerarquía de Encabezados</h3>
+
+          <p>
+            Los encabezados (h1 hasta h6) establecen la jerarquía y estructura
+            del contenido. Es fundamental usarlos de forma secuencial y lógica,
+            sin saltar niveles.
+          </p>
+
+          <p>
+            Por ejemplo, después de un h2 debería venir un h3 si necesitas un
+            subnivel, no un h4. Esta jerarquía ayuda tanto a los usuarios como a
+            los motores de búsqueda a entender la organización del contenido.
+          </p>
+        </article>
+      </section>
+
+      <!-- 
+            ASIDE: Contenido complementario o lateral
+            Uso: Contenido relacionado indirectamente con el contenido principal.
+            Representa información tangencial o complementaria al contenido circundante.
+            Ejemplos: barras laterales, cajas de información, biografías de autor, anuncios.
+            Frecuentemente se posiciona de manera lateral en el diseño visual.
+        -->
+      <aside>
+        <h3>Dato Interesante</h3>
+
+        <p>
+          HTML5, que introdujo la mayoría de las etiquetas semánticas que usamos
+          hoy, fue publicado oficialmente como recomendación por el W3C en
+          octubre de 2014, aunque su desarrollo comenzó mucho antes, en 2004.
+        </p>
+
+        <p>
+          Antes de HTML5, los desarrolladores dependían principalmente de
+          elementos div con diferentes clases e IDs para estructurar el
+          contenido, lo que hacía el código menos comprensible y accesible.
+        </p>
+      </aside>
+
+      <aside>
+        <h3>Recursos Adicionales</h3>
+
+        <p>Para profundizar en HTML Semántico, consulta estos recursos:</p>
+
+        <ul>
+          <li>MDN Web Docs - Guía completa de HTML</li>
+          <li>W3C HTML5 Specification - Especificación oficial</li>
+          <li>WebAIM - Recursos sobre accesibilidad web</li>
+          <li>HTML5 Doctor - Ejemplos prácticos de uso</li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- 
+        FOOTER: Pie de página
+        Uso: Contiene información sobre el autor, copyright, enlaces relacionados, contacto.
+        Típicamente aparece al final de la página o de una sección.
+        Puede contener información de contacto, enlaces a redes sociales, políticas o créditos.
+        Puede haber múltiples footers en una página (uno general y otros dentro de secciones).
+    -->
+    <footer>
+      <h3>Lección 2 - Ejercicio 1</h3>
+
+      <p>Curso: Front-End Trainee V2.0 - Módulo 2: Fundamentos Web</p>
+
+      <p>Autor: Eduardo Javier | Fecha: Octubre 2025</p>
+
+      <p>
+        Este documento demuestra el uso correcto de etiquetas HTML5 semánticas,
+        incluyendo header, main, section, article, aside y footer, cada una con
+        comentarios explicativos sobre su propósito y uso apropiado.
+      </p>
+
+      <p>
+        <a href="mailto:contacto@ejemplo.com">Contacto</a> |
+        <a href="#introduccion">Volver al inicio</a>
+      </p>
+    </footer>
+  </body>
+</html>
