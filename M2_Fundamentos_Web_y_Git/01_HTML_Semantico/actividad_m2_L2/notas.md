@@ -202,6 +202,6 @@ Además de las 6 principales, se utilizaron otras etiquetas para completar la es
 
 ---
 
-**Autor:** Eduardo Javier  
+**Autor:** Eduardo Javier Perez Espindola
 **Estado:** Completado ✅  
 **Última actualización:** 30 de octubre de 2025
