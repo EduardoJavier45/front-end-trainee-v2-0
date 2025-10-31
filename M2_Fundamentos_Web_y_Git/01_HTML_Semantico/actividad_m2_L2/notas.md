@@ -5,7 +5,7 @@
 - **Nombre del archivo:** index.html
 - **Carpeta:** actividad_m2_L2
 - **Curso:** Front-End Trainee V2.0
-- **Módulo:** M2 - Fundamentos Web y Git
+- **Módulo:** M2 - Fundamentos HTML
 - **Lección:** Lección 2, Ejercicio 2
 - **Fecha:** 30 de octubre de 2025
 

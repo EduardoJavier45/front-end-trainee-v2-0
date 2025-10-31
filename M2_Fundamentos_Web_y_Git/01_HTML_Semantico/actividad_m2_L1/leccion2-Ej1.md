@@ -4,7 +4,7 @@
 
 - **Nombre del ejercicio:** leccion2-Ej1.html
 - **Curso:** Front-End Trainee V2.0
-- **Módulo:** M2 - Fundamentos Web y Git
+- **Módulo:** M2 - Fundamentos Web
 - **Tema:** HTML Semántico
 - **Fecha:** 30 de octubre de 2025
 
