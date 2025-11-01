@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Guía práctica de CSS moderno con ejemplos interactivos"
+    />
+    <title>CSS Moderno - Práctica 03</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 
+        ESTRUCTURA PRINCIPAL:
+        Esta página demuestra los atributos más importantes de CSS moderno.
+        Cada sección está diseñada para mostrar una característica específica de CSS.
+    -->
+
+    <!-- HEADER: Encabezado con gradiente y posicionamiento fijo -->
+    <header class="main-header">
+      <div class="container">
+        <h1 class="header-title">CSS Moderno: Guía Práctica</h1>
+        <p class="header-subtitle">
+          Aprende las propiedades CSS más importantes con ejemplos visuales
+        </p>
+      </div>
+    </header>
+
+    <!-- NAVEGACIÓN: Menú sticky con flexbox -->
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="#variables">Variables CSS</a></li>
+          <li><a href="#flexbox">Flexbox</a></li>
+          <li><a href="#grid">CSS Grid</a></li>
+          <li><a href="#transiciones">Transiciones</a></li>
+          <li><a href="#animaciones">Animaciones</a></li>
+          <li><a href="#responsive">Responsive</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+      <div class="container">
+        <!-- SECCIÓN 1: VARIABLES CSS (Custom Properties) -->
+        <section id="variables" class="content-section">
+          <h2 class="section-title">1. Variables CSS (Custom Properties)</h2>
+          <p class="section-description">
+            Las variables CSS permiten almacenar valores que se pueden
+            reutilizar en todo el documento, facilitando el mantenimiento y los
+            cambios de diseño.
+          </p>
+
+          <div class="demo-box variables-demo">
+            <div
+              class="demo-item"
+              style="background-color: var(--color-primary)"
+            >
+              <p>Color Primario</p>
+              <code>var(--color-primary)</code>
+            </div>
+            <div
+              class="demo-item"
+              style="background-color: var(--color-secondary)"
+            >
+              <p>Color Secundario</p>
+              <code>var(--color-secondary)</code>
+            </div>
+            <div
+              class="demo-item"
+              style="background-color: var(--color-accent)"
+            >
+              <p>Color Acento</p>
+              <code>var(--color-accent)</code>
+            </div>
+          </div>
+
+          <div class="code-explanation">
+            <h3>Cómo funcionan:</h3>
+            <ul>
+              <li>
+                <strong>Definición:</strong> Se declaran con
+                <code>--nombre-variable</code> en :root
+              </li>
+              <li>
+                <strong>Uso:</strong> Se acceden con
+                <code>var(--nombre-variable)</code>
+              </li>
+              <li>
+                <strong>Ventaja:</strong> Cambiar un valor en un lugar afecta
+                todo el sitio
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 2: FLEXBOX -->
+        <section id="flexbox" class="content-section">
+          <h2 class="section-title">2. Flexbox - Layout Flexible</h2>
+          <p class="section-description">
+            Flexbox es un modelo de diseño unidimensional (fila o columna) que
+            facilita la alineación y distribución de elementos en un contenedor.
+          </p>
+
+          <!-- Ejemplo 1: Justify Content -->
+          <div class="demo-container">
+            <h3>Justify-content (alineación horizontal)</h3>
+            <div class="flex-demo flex-justify-start">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
+            <p><code>justify-content: flex-start;</code></p>
+
+            <div class="flex-demo flex-justify-center">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
+            <p><code>justify-content: center;</code></p>
+
+            <div class="flex-demo flex-justify-between">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
+            <p><code>justify-content: space-between;</code></p>
+          </div>
+
+          <!-- Ejemplo 2: Align Items -->
+          <div class="demo-container">
+            <h3>Align-items (alineación vertical)</h3>
+            <div class="flex-demo flex-align-items" style="height: 150px">
+              <div class="flex-item">Flex Start</div>
+              <div class="flex-item" style="align-self: center">Center</div>
+              <div class="flex-item" style="align-self: flex-end">Flex End</div>
+            </div>
+          </div>
+
+          <div class="code-explanation">
+            <h3>Propiedades principales:</h3>
+            <ul>
+              <li><strong>display: flex;</strong> - Activa el modo flexbox</li>
+              <li>
+                <strong>flex-direction:</strong> row | column (dirección de los
+                items)
+              </li>
+              <li>
+                <strong>justify-content:</strong> Alineación en el eje principal
+              </li>
+              <li>
+                <strong>align-items:</strong> Alineación en el eje secundario
+              </li>
+              <li><strong>gap:</strong> Espaciado entre elementos</li>
+              <li>
+                <strong>flex-wrap:</strong> Permite que los items pasen a nueva
+                línea
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: CSS GRID -->
+        <section id="grid" class="content-section">
+          <h2 class="section-title">3. CSS Grid - Layout Bidimensional</h2>
+          <p class="section-description">
+            CSS Grid es un sistema de diseño bidimensional (filas y columnas)
+            que permite crear layouts complejos de manera más eficiente.
+          </p>
+
+          <div class="demo-container">
+            <h3>Grid básico - 3 columnas</h3>
+            <div class="grid-demo grid-basic">
+              <div class="grid-item">Item 1</div>
+              <div class="grid-item">Item 2</div>
+              <div class="grid-item">Item 3</div>
+              <div class="grid-item">Item 4</div>
+              <div class="grid-item">Item 5</div>
+              <div class="grid-item">Item 6</div>
+            </div>
+            <p><code>grid-template-columns: repeat(3, 1fr);</code></p>
+          </div>
+
+          <div class="demo-container">
+            <h3>Grid con áreas - Layout complejo</h3>
+            <div class="grid-demo grid-areas">
+              <div class="grid-item grid-header">Header</div>
+              <div class="grid-item grid-sidebar">Sidebar</div>
+              <div class="grid-item grid-main">Main Content</div>
+              <div class="grid-item grid-footer">Footer</div>
+            </div>
+          </div>
+
+          <div class="code-explanation">
+            <h3>Propiedades principales:</h3>
+            <ul>
+              <li><strong>display: grid;</strong> - Activa el modo grid</li>
+              <li><strong>grid-template-columns:</strong> Define columnas</li>
+              <li><strong>grid-template-rows:</strong> Define filas</li>
+              <li><strong>gap:</strong> Espaciado entre celdas</li>
+              <li>
+                <strong>grid-template-areas:</strong> Define áreas con nombres
+              </li>
+              <li><strong>fr:</strong> Unidad de fracción flexible</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 4: TRANSICIONES -->
+        <section id="transiciones" class="content-section">
+          <h2 class="section-title">4. Transiciones CSS</h2>
+          <p class="section-description">
+            Las transiciones permiten cambiar valores de propiedades CSS de
+            forma suave durante un período de tiempo determinado.
+          </p>
+
+          <div class="demo-container">
+            <div class="transition-demos">
+              <div class="transition-box transition-color">
+                <p>Hover para cambiar color</p>
+                <code>transition: background-color 0.3s;</code>
+              </div>
+
+              <div class="transition-box transition-transform">
+                <p>Hover para escalar</p>
+                <code>transition: transform 0.3s;</code>
+              </div>
+
+              <div class="transition-box transition-all">
+                <p>Hover para múltiples efectos</p>
+                <code>transition: all 0.3s;</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-explanation">
+            <h3>Propiedades de transición:</h3>
+            <ul>
+              <li>
+                <strong>transition-property:</strong> Propiedad a animar (color,
+                transform, all, etc.)
+              </li>
+              <li>
+                <strong>transition-duration:</strong> Duración de la transición
+                (0.3s, 500ms)
+              </li>
+              <li>
+                <strong>transition-timing-function:</strong> Curva de
+                aceleración (ease, linear, ease-in-out)
+              </li>
+              <li>
+                <strong>transition-delay:</strong> Retraso antes de iniciar
+              </li>
+              <li>
+                <strong>Forma corta:</strong> transition: property duration
+                timing-function delay;
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 5: ANIMACIONES -->
+        <section id="animaciones" class="content-section">
+          <h2 class="section-title">5. Animaciones CSS (@keyframes)</h2>
+          <p class="section-description">
+            Las animaciones permiten crear movimientos más complejos con
+            múltiples estados, definidos mediante @keyframes.
+          </p>
+
+          <div class="demo-container">
+            <div class="animation-demos">
+              <div class="animation-box bounce-animation">
+                <p>Bounce</p>
+              </div>
+
+              <div class="animation-box rotate-animation">
+                <p>Rotate</p>
+              </div>
+
+              <div class="animation-box pulse-animation">
+                <p>Pulse</p>
+              </div>
+
+              <div class="animation-box slide-animation">
+                <p>Slide</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-explanation">
+            <h3>Propiedades de animación:</h3>
+            <ul>
+              <li>
+                <strong>@keyframes:</strong> Define los estados de la animación
+                (0%, 50%, 100%)
+              </li>
+              <li>
+                <strong>animation-name:</strong> Nombre del @keyframes a usar
+              </li>
+              <li>
+                <strong>animation-duration:</strong> Duración total de la
+                animación
+              </li>
+              <li>
+                <strong>animation-timing-function:</strong> Curva de velocidad
+              </li>
+              <li>
+                <strong>animation-iteration-count:</strong> Número de
+                repeticiones (infinite)
+              </li>
+              <li>
+                <strong>animation-direction:</strong> Dirección (normal,
+                reverse, alternate)
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 6: DISEÑO RESPONSIVE -->
+        <section id="responsive" class="content-section">
+          <h2 class="section-title">6. Diseño Responsive - Media Queries</h2>
+          <p class="section-description">
+            Las Media Queries permiten aplicar estilos diferentes según el
+            tamaño de pantalla, creando diseños adaptativos.
+          </p>
+
+          <div class="demo-container">
+            <div class="responsive-demo">
+              <div class="responsive-box">
+                <h3>Vista Actual</h3>
+                <p class="device-indicator desktop-only">
+                  🖥️ Desktop (>1024px)
+                </p>
+                <p class="device-indicator tablet-only">
+                  📱 Tablet (768px-1024px)
+                </p>
+                <p class="device-indicator mobile-only">📱 Mobile (<768px)</p>
+              </div>
+            </div>
+
+            <div class="responsive-grid">
+              <div class="responsive-card">Card 1</div>
+              <div class="responsive-card">Card 2</div>
+              <div class="responsive-card">Card 3</div>
+              <div class="responsive-card">Card 4</div>
+            </div>
+          </div>
+
+          <div class="code-explanation">
+            <h3>Breakpoints comunes:</h3>
+            <ul>
+              <li><strong>Mobile:</strong> @media (max-width: 767px)</li>
+              <li>
+                <strong>Tablet:</strong> @media (min-width: 768px) and
+                (max-width: 1023px)
+              </li>
+              <li><strong>Desktop:</strong> @media (min-width: 1024px)</li>
+              <li>
+                <strong>Mobile First:</strong> Empezar con estilos móviles y
+                usar min-width
+              </li>
+              <li>
+                <strong>Desktop First:</strong> Empezar con desktop y usar
+                max-width
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- SECCIÓN BONUS: OTRAS PROPIEDADES MODERNAS -->
+        <section class="content-section bonus-section">
+          <h2 class="section-title">
+            ✨ Bonus: Otras Propiedades CSS Modernas
+          </h2>
+
+          <div class="bonus-grid">
+            <!-- Box Shadow -->
+            <div class="bonus-card">
+              <h3>Box Shadow</h3>
+              <div class="demo-shadow">Sombras suaves</div>
+              <code>box-shadow: 0 4px 6px rgba(0,0,0,0.1);</code>
+            </div>
+
+            <!-- Border Radius -->
+            <div class="bonus-card">
+              <h3>Border Radius</h3>
+              <div class="demo-radius">Bordes redondeados</div>
+              <code>border-radius: 12px;</code>
+            </div>
+
+            <!-- Backdrop Filter -->
+            <div class="bonus-card backdrop-demo">
+              <h3>Backdrop Filter</h3>
+              <div class="demo-backdrop">Efecto de desenfoque</div>
+              <code>backdrop-filter: blur(10px);</code>
+            </div>
+
+            <!-- Clip Path -->
+            <div class="bonus-card">
+              <h3>Clip Path</h3>
+              <div class="demo-clip">Formas personalizadas</div>
+              <code>clip-path: polygon(...);</code>
+            </div>
+
+            <!-- Object Fit -->
+            <div class="bonus-card">
+              <h3>Object Fit</h3>
+              <div class="demo-object-fit">
+                <div class="object-cover">Cover</div>
+              </div>
+              <code>object-fit: cover;</code>
+            </div>
+
+            <!-- Filter -->
+            <div class="bonus-card">
+              <h3>CSS Filters</h3>
+              <div class="demo-filter">Filtros de imagen</div>
+              <code>filter: grayscale(50%);</code>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="container">
+        <p><strong>CSS Moderno - Práctica 03</strong></p>
+        <p>Front-End Trainee V2.0 | Módulo 2: Fundamentos Web</p>
+        <p>
+          Esta página demuestra las propiedades CSS más importantes de manera
+          práctica e interactiva.
+        </p>
+        <p>
+          Redimensiona la ventana del navegador para ver el diseño responsive en
+          acción.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

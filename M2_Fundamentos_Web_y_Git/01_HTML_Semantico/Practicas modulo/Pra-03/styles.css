@@ -1,0 +1,1211 @@
+/* ============================================
+   CSS MODERNO - GUÍA PRÁCTICA COMPLETA
+   ============================================
+   
+   Este archivo CSS demuestra las propiedades más importantes
+   del CSS moderno, cada una exhaustivamente comentada para
+   facilitar el aprendizaje.
+   
+   Autor: Front-End Trainee V2.0
+   Fecha: Octubre 2025
+   ============================================ */
+
+/* ============================================
+   1. VARIABLES CSS (CUSTOM PROPERTIES)
+   ============================================
+   
+   Las variables CSS (Custom Properties) permiten almacenar valores
+   que se pueden reutilizar en todo el documento.
+   
+   SINTAXIS:
+   - Definición: --nombre-variable: valor;
+   - Uso: var(--nombre-variable)
+   - Scope: Se definen en :root para uso global
+   
+   VENTAJAS:
+   - Mantenimiento más fácil (cambiar un valor en un lugar)
+   - Código más limpio y legible
+   - Se pueden manipular con JavaScript
+   - Permiten temas dinámicos
+*/
+
+:root {
+  /* Colores principales - Facilita cambios de tema */
+  --color-primary: #6366f1; /* Índigo - Color principal */
+  --color-primary-dark: #4f46e5; /* Índigo oscuro - Hover states */
+  --color-primary-light: #818cf8; /* Índigo claro - Backgrounds */
+
+  --color-secondary: #ec4899; /* Rosa - Color secundario */
+  --color-accent: #f59e0b; /* Ámbar - Acentos y destacados */
+
+  /* Escala de grises - Para textos y fondos */
+  --color-text: #1f2937; /* Gris oscuro - Texto principal */
+  --color-text-light: #6b7280; /* Gris medio - Texto secundario */
+  --color-bg: #f9fafb; /* Gris muy claro - Fondo general */
+  --color-surface: #ffffff; /* Blanco - Superficies (cards) */
+  --color-border: #e5e7eb; /* Gris claro - Bordes */
+
+  /* Espaciado - Sistema de spacing consistente */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 3rem; /* 48px */
+  --spacing-2xl: 4rem; /* 64px */
+
+  /* Tipografía - Tamaños de fuente escalables */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
+
+  /* Sombras - Sistema de elevación */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Border radius - Redondeo de esquinas */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px; /* Completamente redondeado */
+
+  /* Transiciones - Duraciones estándar */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Contenedor - Ancho máximo */
+  --container-width: 1200px;
+}
+
+/* ============================================
+   2. RESET Y ESTILOS BASE
+   ============================================
+   
+   Reset básico para consistencia entre navegadores.
+   Establece valores predeterminados sensatos.
+*/
+
+/* 
+   Box-sizing: border-box
+   - Incluye padding y border en el ancho/alto total
+   - Facilita el cálculo de dimensiones
+   - Comportamiento más intuitivo
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+   Estilos del body
+   - Define tipografía base
+   - Color de texto y fondo
+   - Line-height para legibilidad
+*/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  /* Suaviza el scroll cuando se hace click en enlaces internos */
+  scroll-behavior: smooth;
+}
+
+/* 
+   Container - Contenedor centralizado con ancho máximo
+   - max-width: limita el ancho en pantallas grandes
+   - margin: 0 auto; centra horizontalmente
+   - padding: espaciado interno responsive
+*/
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ============================================
+   3. HEADER - GRADIENTES Y CLIP-PATH
+   ============================================
+   
+   Demuestra:
+   - Linear-gradient para fondos degradados
+   - Clip-path para formas personalizadas
+   - Text-shadow para mejorar legibilidad
+*/
+
+.main-header {
+  /* 
+       Background con gradiente lineal
+       - Dirección: to bottom right (135deg)
+       - Múltiples colores para transición suave
+    */
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+
+  /* Color de texto blanco con sombra para legibilidad */
+  color: white;
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+
+  /* 
+       Clip-path: polygon() - Crea forma personalizada
+       - Define puntos en formato: x y (porcentajes)
+       - Crea un efecto diagonal en la parte inferior
+    */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+  /* Margen inferior negativo para superponer con siguiente sección */
+  margin-bottom: -50px;
+}
+
+.header-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+
+  /* 
+       Text-shadow: mejora legibilidad sobre fondos
+       - Sintaxis: offset-x offset-y blur-radius color
+    */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-subtitle {
+  font-size: var(--font-size-xl);
+  opacity: 0.95;
+}
+
+/* ============================================
+   4. NAVEGACIÓN - STICKY Y FLEXBOX
+   ============================================
+   
+   Demuestra:
+   - Position: sticky para navegación fija al scroll
+   - Flexbox para distribución horizontal
+   - Backdrop-filter para efecto de desenfoque
+*/
+
+.main-nav {
+  /* 
+       Position: sticky
+       - Se comporta como relative hasta llegar a 'top'
+       - Luego se fija en esa posición durante el scroll
+       - Perfecto para menús de navegación
+    */
+  position: sticky;
+  top: 0;
+
+  /* Z-index alto para estar sobre otros elementos */
+  z-index: 100;
+
+  /* 
+       Background semi-transparente con backdrop-filter
+       - rgba: permite transparencia
+       - backdrop-filter: blur() desenfoca el fondo
+       - Efecto moderno de "glassmorphism"
+    */
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+
+  /* Sombra sutil para separar del contenido */
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-list {
+  /* 
+       FLEXBOX - Sistema de layout unidimensional
+       - display: flex; activa el modo flexbox
+       - Perfecto para distribución horizontal de items
+    */
+  display: flex;
+
+  /* 
+       justify-content: center
+       - Centra los items horizontalmente (eje principal)
+       - Otras opciones: flex-start, flex-end, space-between, space-around
+    */
+  justify-content: center;
+
+  /* 
+       gap: espaciado entre items flex
+       - Alternativa moderna a margin
+       - Se aplica solo entre items (no en los bordes)
+    */
+  gap: var(--spacing-md);
+
+  /* Elimina estilos de lista por defecto */
+  list-style: none;
+
+  /* 
+       flex-wrap: wrap
+       - Permite que los items pasen a nueva línea si no caben
+       - Importante para responsive design
+    */
+  flex-wrap: wrap;
+}
+
+.nav-list a {
+  /* Elimina subrayado de enlaces */
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+
+  /* 
+       Transition: anima cambios de propiedades
+       - Sintaxis: property duration timing-function
+       - 'all' aplica a cualquier propiedad que cambie
+    */
+  transition: var(--transition-fast);
+}
+
+.nav-list a:hover {
+  background-color: var(--color-primary-light);
+  color: white;
+
+  /* 
+       Transform: scale() - Agranda ligeramente el elemento
+       - scale(1.05) = 105% del tamaño original
+       - Crea efecto de "levantamiento" al hover
+    */
+  transform: scale(1.05);
+}
+
+/* ============================================
+   5. CONTENIDO PRINCIPAL - GRID LAYOUT
+   ============================================ */
+
+.main-content {
+  padding: var(--spacing-2xl) 0;
+}
+
+.content-section {
+  /* 
+       Background blanco para tarjetas sobre fondo gris
+    */
+  background-color: var(--color-surface);
+
+  /* Border-radius para esquinas redondeadas */
+  border-radius: var(--radius-lg);
+
+  /* Padding interno generoso */
+  padding: var(--spacing-xl);
+
+  /* Margen entre secciones */
+  margin-bottom: var(--spacing-xl);
+
+  /* Sombra para dar sensación de elevación */
+  box-shadow: var(--shadow-md);
+
+  /* Borde sutil */
+  border: 1px solid var(--color-border);
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+
+  /* 
+       Border-left: línea decorativa a la izquierda
+       - Grosor, estilo, color
+    */
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--spacing-md);
+}
+
+.section-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
+}
+
+/* ============================================
+   6. VARIABLES CSS - DEMOSTRACIÓN
+   ============================================ */
+
+.demo-box {
+  /* 
+       CSS GRID - Sistema de layout bidimensional
+       - Permite crear layouts en filas Y columnas
+       - Más poderoso que flexbox para layouts complejos
+    */
+  display: grid;
+
+  /* 
+       grid-template-columns: define columnas
+       - repeat(3, 1fr): 3 columnas de igual tamaño
+       - 1fr: una fracción del espacio disponible
+       - Auto-responsive: se distribuyen equitativamente
+    */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Gap: espaciado entre celdas del grid */
+  gap: var(--spacing-md);
+
+  margin: var(--spacing-lg) 0;
+}
+
+.demo-item {
+  /* Padding interno */
+  padding: var(--spacing-xl);
+
+  /* Bordes redondeados */
+  border-radius: var(--radius-lg);
+
+  /* Color de texto */
+  color: white;
+
+  /* Centrado de contenido con flexbox */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* 
+       Text-align: center
+       - Centra el texto dentro de su contenedor
+    */
+  text-align: center;
+
+  /* Altura mínima */
+  min-height: 150px;
+
+  /* Sombra */
+  box-shadow: var(--shadow-lg);
+
+  /* Transición para hover */
+  transition: var(--transition-normal);
+}
+
+.demo-item:hover {
+  /* 
+       Transform: translateY() - Mueve verticalmente
+       - Valores negativos mueven hacia arriba
+       - Crea efecto de "levitación"
+    */
+  transform: translateY(-5px);
+
+  /* Sombra más grande al hacer hover */
+  box-shadow: var(--shadow-xl);
+}
+
+.demo-item code {
+  /* Fondo oscuro semi-transparente para código */
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-sm);
+}
+
+/* ============================================
+   7. FLEXBOX - EJEMPLOS PRÁCTICOS
+   ============================================ */
+
+.flex-demo {
+  /* Activa flexbox */
+  display: flex;
+
+  /* Fondo para visualizar el contenedor */
+  background-color: var(--color-bg);
+
+  /* Padding interno */
+  padding: var(--spacing-md);
+
+  /* Bordes redondeados */
+  border-radius: var(--radius-md);
+
+  /* Margen inferior */
+  margin-bottom: var(--spacing-md);
+
+  /* Altura mínima */
+  min-height: 100px;
+
+  /* Borde para delimitar */
+  border: 2px dashed var(--color-border);
+}
+
+/* Justify-content: flex-start (por defecto) */
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
+/* Justify-content: center - Centra items horizontalmente */
+.flex-justify-center {
+  justify-content: center;
+}
+
+/* Justify-content: space-between - Espacio igual entre items */
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+/* Align-items: alineación vertical */
+.flex-align-items {
+  align-items: flex-start;
+}
+
+.flex-item {
+  /* Fondo de color */
+  background-color: var(--color-primary);
+  color: white;
+
+  /* Padding interno */
+  padding: var(--spacing-md);
+
+  /* Bordes redondeados */
+  border-radius: var(--radius-md);
+
+  /* Ancho mínimo */
+  min-width: 80px;
+
+  /* Centrado de texto */
+  text-align: center;
+  font-weight: 600;
+
+  /* Sombra */
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   8. CSS GRID - EJEMPLOS AVANZADOS
+   ============================================ */
+
+.grid-demo {
+  display: grid;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Grid básico - 3 columnas iguales */
+.grid-basic {
+  /* 
+       repeat(): función para repetir patrones
+       - repeat(3, 1fr): 3 columnas de 1 fracción cada una
+       - 1fr: toma una fracción del espacio disponible
+    */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Grid con áreas nombradas - Layout complejo */
+.grid-areas {
+  /* 
+       grid-template-areas: define layout con nombres
+       - Cada string es una fila
+       - Los nombres se repiten para ocupar múltiples celdas
+       - Muy intuitivo y mantenible
+    */
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+
+  /* Define columnas: sidebar angosta, main ancho */
+  grid-template-columns: 200px 1fr 1fr;
+
+  /* Define altura de filas */
+  grid-template-rows: auto 200px auto;
+}
+
+/* Asigna elementos a áreas del grid */
+.grid-header {
+  grid-area: header;
+}
+.grid-sidebar {
+  grid-area: sidebar;
+}
+.grid-main {
+  grid-area: main;
+}
+.grid-footer {
+  grid-area: footer;
+}
+
+.grid-item {
+  background-color: var(--color-primary-light);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+
+  /* Centrado de contenido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   9. TRANSICIONES CSS
+   ============================================
+   
+   Las transiciones permiten animar cambios de propiedades CSS
+   de forma suave durante un tiempo determinado.
+   
+   PROPIEDADES:
+   - transition-property: qué animar (color, transform, all)
+   - transition-duration: cuánto tiempo (s o ms)
+   - transition-timing-function: curva de aceleración
+   - transition-delay: retraso antes de iniciar
+*/
+
+.transition-demos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.transition-box {
+  background-color: var(--color-surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  text-align: center;
+  cursor: pointer;
+
+  /* Altura mínima para mantener tamaño */
+  min-height: 180px;
+
+  /* Flexbox para centrar contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transición de color de fondo */
+.transition-color {
+  /* 
+       transition: property duration timing-function
+       - background-color: propiedad a animar
+       - 0.3s: duración de 300 milisegundos
+       - ease: curva de aceleración (inicio lento, medio rápido, fin lento)
+    */
+  transition: background-color 0.3s ease;
+}
+
+.transition-color:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Transición de transformación */
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+
+.transition-transform:hover {
+  /* 
+       transform: scale() - Escala el elemento
+       - scale(1.1) = 110% del tamaño original
+       - Crea efecto de "zoom"
+    */
+  transform: scale(1.1);
+}
+
+/* Transición múltiple (all) */
+.transition-all {
+  /* 
+       all: aplica transición a TODAS las propiedades
+       - Más fácil pero menos performante
+       - Mejor especificar propiedades concretas en producción
+    */
+  transition: all 0.3s ease;
+}
+
+.transition-all:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   10. ANIMACIONES CSS (@keyframes)
+   ============================================
+   
+   Las animaciones permiten crear movimientos complejos con
+   múltiples estados, definidos mediante @keyframes.
+   
+   DIFERENCIA CON TRANSITIONS:
+   - Transitions: solo inicio y fin (A -> B)
+   - Animations: múltiples estados (A -> B -> C -> D)
+*/
+
+.animation-demos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.animation-box {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-weight: 600;
+  min-height: 150px;
+
+  /* Flexbox para centrar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+   @keyframes: define la animación
+   - Nombre: bounce
+   - Estados: 0% (inicio), 50% (medio), 100% (fin)
+   - Puede usar 'from' y 'to' en lugar de porcentajes
+*/
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.bounce-animation {
+  /* 
+       animation: name duration timing-function iteration-count
+       - bounce: nombre del @keyframes
+       - 1s: duración de cada ciclo
+       - ease-in-out: aceleración suave
+       - infinite: se repite indefinidamente
+    */
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Animación de rotación */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 3s linear infinite;
+}
+
+/* Animación de pulso (scale) */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animación de deslizamiento horizontal */
+@keyframes slide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.slide-animation {
+  animation: slide 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   11. DISEÑO RESPONSIVE - MEDIA QUERIES
+   ============================================
+   
+   Las Media Queries permiten aplicar estilos diferentes según
+   características del dispositivo (ancho, orientación, etc.)
+   
+   ESTRATEGIAS:
+   - Mobile First: empezar con móvil, usar min-width para desktop
+   - Desktop First: empezar con desktop, usar max-width para móvil
+   
+   BREAKPOINTS COMUNES:
+   - Mobile: < 768px
+   - Tablet: 768px - 1023px
+   - Desktop: >= 1024px
+*/
+
+.responsive-demo {
+  background-color: var(--color-surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--color-primary);
+  margin: var(--spacing-lg) 0;
+}
+
+.device-indicator {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  padding: var(--spacing-md);
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-md);
+
+  /* Por defecto, ocultos */
+  display: none;
+}
+
+/* Mostrar indicador de móvil en pantallas pequeñas */
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Mostrar indicador de tablet en pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-only {
+    display: block;
+  }
+}
+
+/* Mostrar indicador de desktop en pantallas grandes */
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* Grid responsive que se adapta al tamaño */
+.responsive-grid {
+  display: grid;
+
+  /* 
+       repeat(auto-fit, minmax(250px, 1fr))
+       - auto-fit: crea tantas columnas como quepan
+       - minmax(250px, 1fr): mínimo 250px, máximo 1 fracción
+       - Grid AUTOMÁTICAMENTE responsive sin media queries
+    */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.responsive-card {
+  background-color: var(--color-primary-light);
+  color: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-weight: 600;
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   12. PROPIEDADES BONUS - CSS MODERNO
+   ============================================ */
+
+.bonus-section {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(236, 72, 153, 0.1) 100%
+  );
+}
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.bonus-card {
+  background-color: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.bonus-card h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+}
+
+.bonus-card code {
+  display: block;
+  background-color: var(--color-bg);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-md);
+  color: var(--color-text-light);
+}
+
+/* Box Shadow - Sombras */
+.demo-shadow {
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+
+  /* 
+       box-shadow: offset-x offset-y blur-radius spread-radius color
+       - offset-x: desplazamiento horizontal
+       - offset-y: desplazamiento vertical
+       - blur-radius: difuminado
+       - spread-radius: expansión
+       - color: rgba para transparencia
+    */
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+/* Border Radius - Bordes redondeados */
+.demo-radius {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: var(--spacing-lg);
+
+  /* 
+       border-radius: puede tener 1, 2, 3 o 4 valores
+       - 1 valor: todas las esquinas iguales
+       - 2 valores: superior-izq/inferior-der, superior-der/inferior-izq
+       - 4 valores: sup-izq, sup-der, inf-der, inf-izq
+    */
+  border-radius: var(--radius-xl);
+}
+
+/* Backdrop Filter - Efecto de desenfoque de fondo */
+.backdrop-demo {
+  position: relative;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%236366f1" width="100" height="100"/><circle fill="%23ec4899" cx="50" cy="50" r="30"/></svg>');
+  background-size: cover;
+  min-height: 200px;
+}
+
+.demo-backdrop {
+  /* 
+       backdrop-filter: aplica filtros al fondo detrás del elemento
+       - blur(): desenfoque (glassmorphism)
+       - brightness(), contrast(), grayscale(), etc.
+       - Requiere fondo semi-transparente
+    */
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+}
+
+/* Clip Path - Formas personalizadas */
+.demo-clip {
+  background-color: var(--color-accent);
+  color: white;
+  padding: var(--spacing-lg);
+
+  /* 
+       clip-path: recorta el elemento en formas personalizadas
+       - polygon(): define forma con puntos x,y
+       - circle(), ellipse(), inset() también disponibles
+       - Puntos en formato: x y (porcentajes o px)
+    */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Object Fit - Control de imágenes/videos */
+.demo-object-fit {
+  height: 120px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.object-cover {
+  /* 
+       object-fit: controla cómo se ajusta contenido reemplazado
+       - cover: llena el contenedor, puede recortar
+       - contain: contenido completo visible, puede haber espacio
+       - fill: estira para llenar (deforma)
+       - none, scale-down: otros valores
+    */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+/* CSS Filters - Filtros visuales */
+.demo-filter {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+
+  /* 
+       filter: aplica efectos visuales al elemento
+       - grayscale(): escala de grises (0-100%)
+       - blur(): desenfoque
+       - brightness(): brillo
+       - contrast(): contraste
+       - hue-rotate(): rotación de color
+       - saturate(): saturación
+    */
+  filter: grayscale(30%) brightness(1.1);
+
+  transition: filter 0.3s ease;
+}
+
+.demo-filter:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* ============================================
+   13. CÓDIGO DE EXPLICACIÓN
+   ============================================ */
+
+.code-explanation {
+  background-color: var(--color-bg);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-accent);
+  margin-top: var(--spacing-lg);
+}
+
+.code-explanation h3 {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.code-explanation ul {
+  list-style-position: inside;
+  color: var(--color-text-light);
+}
+
+.code-explanation li {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.8;
+}
+
+.code-explanation code {
+  background-color: var(--color-surface);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+/* ============================================
+   14. FOOTER
+   ============================================ */
+
+.main-footer {
+  background-color: var(--color-text);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.main-footer p {
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.9;
+}
+
+/* ============================================
+   15. MEDIA QUERIES - RESPONSIVE DESIGN
+   ============================================
+   
+   Adaptamos el diseño para diferentes tamaños de pantalla
+*/
+
+/* TABLET: 768px - 1023px */
+@media (max-width: 1023px) {
+  .header-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .demo-box {
+    /* 2 columnas en tablet */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-areas {
+    /* Reorganiza grid en tablet */
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 150px 1fr;
+  }
+}
+
+/* MÓVIL: < 768px */
+@media (max-width: 767px) {
+  /* Reduce tamaños de fuente en móvil */
+  .header-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+
+  /* Navegación en columna en móvil */
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-list a {
+    text-align: center;
+    padding: var(--spacing-sm);
+  }
+
+  /* 1 columna en móvil */
+  .demo-box {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-basic {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-areas {
+    /* Layout en columna para móvil */
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce padding en móvil */
+  .content-section {
+    padding: var(--spacing-md);
+  }
+
+  /* Oculta clip-path en móvil (opcional) */
+  .main-header {
+    clip-path: none;
+    margin-bottom: 0;
+  }
+}
+
+/* DESKTOP GRANDE: > 1200px */
+@media (min-width: 1200px) {
+  .demo-box {
+    /* Más columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================
+   16. UTILIDADES - CLASES HELPER
+   ============================================ */
+
+/* Ocultar elementos */
+.hidden {
+  display: none !important;
+}
+
+/* Centrar texto */
+.text-center {
+  text-align: center;
+}
+
+/* Márgenes */
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 
+   !important: sobrescribe cualquier otra regla
+   - Usar con moderación
+   - Útil para clases helper que siempre deben aplicarse
+*/
+
+/* ============================================
+   FIN DEL ARCHIVO CSS
+   ============================================
+   
+   Este archivo demuestra las propiedades CSS más importantes
+   para el desarrollo web moderno. Cada propiedad está
+   comentada exhaustivamente para facilitar el aprendizaje.
+   
+   TEMAS CUBIERTOS:
+   ✅ Variables CSS (Custom Properties)
+   ✅ Flexbox (Layout unidimensional)
+   ✅ CSS Grid (Layout bidimensional)
+   ✅ Transiciones (Animaciones simples)
+   ✅ Animaciones (@keyframes)
+   ✅ Media Queries (Responsive Design)
+   ✅ Transform (Transformaciones 2D)
+   ✅ Box Shadow (Sombras)
+   ✅ Border Radius (Bordes redondeados)
+   ✅ Backdrop Filter (Efectos de fondo)
+   ✅ Clip Path (Formas personalizadas)
+   ✅ Object Fit (Control de medios)
+   ✅ CSS Filters (Filtros visuales)
+   ✅ Gradients (Degradados)
+   ✅ Position Sticky (Posicionamiento)
+   
+   ¡Experimenta modificando los valores para aprender mejor!
+   ============================================ */
