@@ -18,7 +18,7 @@
 /* TAREA 1: Aquí irán los estilos del body */
 body {
   /* Color de fondo gris claro para toda la página */
-  background-color: #f4f4f4;
+  background-color: #f7eded;
 
   /* Resetear márgenes por defecto del navegador */
   margin: 0;
@@ -28,7 +28,7 @@ body {
   font-family: "Arial", "Helvetica", sans-serif;
 
   /* Color del texto por defecto */
-  color: #333;
+  color: #2c2b2b;
 
   /* Altura de línea para mejor legibilidad */
   line-height: 1.6;
@@ -53,7 +53,7 @@ header {
   text-align: center;
 
   /* Sombra sutil para darle profundidad */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(36, 34, 34, 0.1);
 }
 
 /* Estilos específicos para el h1 dentro del header */
@@ -62,13 +62,13 @@ header h1 {
   text-align: center;
 
   /* Color azul para el título principal */
-  color: #4da6ff;
+  color: #559fe9;
 
   /* Eliminar margen superior e inferior */
   margin: 0 0 10px 0;
 
   /* Tamaño de fuente grande */
-  font-size: 2.5rem;
+  font-size: 2rem;
 
   /* Peso de la fuente */
   font-weight: bold;
@@ -77,7 +77,7 @@ header h1 {
 /* Estilos para el párrafo dentro del header */
 header p {
   /* Color más claro para el subtítulo */
-  color: #cccccc;
+  color: #eee9e9;
 
   /* Tamaño de fuente del subtítulo */
   font-size: 1.1rem;
@@ -140,7 +140,7 @@ h3 {
 /* TAREA 3: Aquí irán los estilos del div con clase "container" */
 .container {
   /* Fondo blanco para destacar del fondo gris */
-  background-color: white;
+  background-color: rgb(180, 175, 175);
 
   /* Margen exterior (separación con otros elementos) */
   margin: 20px auto;
@@ -332,7 +332,7 @@ button:active {
   margin: 30px 20px;
 
   /* Bordes ligeramente redondeados */
-  border-radius: 4px;
+  border-radius: 14px;
 
   /* Sombra sutil */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);

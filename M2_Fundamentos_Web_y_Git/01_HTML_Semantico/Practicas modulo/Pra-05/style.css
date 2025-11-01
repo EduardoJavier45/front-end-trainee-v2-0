@@ -1,0 +1,422 @@
+/* ============================================
+   EJERCICIO CSS - NIVEL 2: BOX MODEL
+   ============================================
+   
+   El Modelo de Caja (Box Model) es fundamental en CSS.
+   Cada elemento HTML es una "caja" que ocupa espacio.
+   
+   Componentes del Box Model:
+   - Content: El contenido (texto, imagen, etc.)
+   - Padding: Espacio interno entre el contenido y el borde
+   - Border: El borde del elemento
+   - Margin: Espacio externo entre el elemento y otros
+   
+   Objetivo: Aplicar estos conceptos a las tarjetas
+   ============================================ */
+
+/* ============================================
+   ESTILOS GLOBALES (BODY)
+   ============================================ */
+
+/* TAREA 1: Aquí irán los estilos del body */
+/* Sugerencia: Aplica margin: 0 y padding: 0 para resetear */
+
+/* Reset universal para mejor consistencia en todos los navegadores */
+* {
+  /* Modelo de caja que incluye padding y border en el width total */
+  box-sizing: border-box;
+
+  /* Elimina márgenes y padding por defecto */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Eliminar márgenes por defecto del navegador */
+  margin: 0;
+  padding: 0;
+
+  /* Fuente principal de la página */
+  font-family: "Arial", "Helvetica", sans-serif;
+
+  /* Color de fondo general */
+  background-color: #f5f5f5;
+
+  /* Color del texto */
+  color: #333;
+
+  /* Altura de línea para mejor legibilidad */
+  line-height: 1.6;
+}
+
+/* ============================================
+   ESTILOS DEL HEADER
+   ============================================ */
+
+/* Aquí irán los estilos del header */
+header {
+  /* Fondo oscuro para el header */
+  background-color: #333;
+
+  /* Texto blanco para contraste */
+  color: white;
+
+  /* Centrar el contenido */
+  text-align: center;
+
+  /* Espaciado interno */
+  padding: 30px 20px;
+
+  /* Sombra sutil en la parte inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el h1 dentro del header */
+header h1 {
+  /* Eliminar margen por defecto */
+  margin: 0 0 10px 0;
+
+  /* Tamaño de fuente grande */
+  font-size: 2.5rem;
+
+  /* Color del título */
+  color: #4a90e2;
+}
+
+/* Estilos para el párrafo dentro del header */
+header p {
+  /* Eliminar margen por defecto */
+  margin: 0;
+
+  /* Tamaño de fuente */
+  font-size: 1.1rem;
+
+  /* Color más claro */
+  color: #ccc;
+}
+
+/* ============================================
+   ESTILOS DEL MAIN
+   ============================================ */
+
+/* Aquí irán los estilos del contenido principal */
+main {
+  /* Espaciado interno vertical */
+  padding: 40px 20px;
+
+  /* Altura mínima para el contenido */
+  min-height: 70vh;
+}
+
+/* ============================================
+   CONTENEDOR DE TARJETAS
+   ============================================ */
+
+/* TAREA 6: Aquí irán los estilos de .card-container */
+/* Sugerencia: Usa width: 90% y margin: 0 auto para centrar */
+
+.card-container {
+  /* Ancho del contenedor (90% del viewport) */
+  width: 90%;
+
+  /* Ancho máximo para pantallas grandes */
+  max-width: 1000px;
+
+  /* Centrar el contenedor horizontalmente */
+  /* 0 = margin superior e inferior */
+  /* auto = margin izquierdo y derecho (centra el elemento) */
+  margin: 0 auto;
+
+  /* Centrar las tarjetas dentro del contenedor */
+  text-align: center;
+
+  /* Espaciado interno */
+  padding: 20px 0;
+}
+
+/* ============================================
+   ESTILOS DE LA TARJETA (CARD)
+   ============================================ */
+
+/* TAREA 2: Aplica padding a las tarjetas */
+/* TAREA 3: Añade border a las tarjetas */
+/* TAREA 4: Establece width fijo de 300px */
+/* TAREA 5: Usa display: inline-block */
+/* TAREA 6: Añade margin entre tarjetas */
+
+.card {
+  /* TAREA 5: Display inline-block para mostrar tarjetas en línea */
+  /* Permite que las tarjetas se coloquen una al lado de la otra */
+  /* y a la vez respeten width y height */
+  display: inline-block;
+
+  /* TAREA 4: Ancho fijo de 300px */
+  /* Define el ancho de cada tarjeta */
+  width: 300px;
+
+  /* TAREA 2: Padding de 16px */
+  /* Espaciado interno para que el contenido no toque los bordes */
+  padding: 16px;
+
+  /* TAREA 3: Border sólido de 1px gris */
+  /* Añade un borde alrededor de cada tarjeta */
+  border: 1px solid #ccc;
+
+  /* TAREA 6: Margin de 10px */
+  /* Espaciado externo para separar las tarjetas entre sí */
+  margin: 10px;
+
+  /* Fondo blanco para destacar sobre el fondo gris */
+  background-color: white;
+
+  /* Bordes redondeados para un diseño moderno */
+  border-radius: 8px;
+
+  /* Alinear el texto a la izquierda dentro de la tarjeta */
+  text-align: left;
+
+  /* Alineación vertical superior */
+  vertical-align: top;
+
+  /* Transición suave para efectos hover */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  /* Ocultar contenido que se salga de la tarjeta */
+  overflow: hidden;
+}
+
+/* ============================================
+   ESTILOS DE LA IMAGEN
+   ============================================ */
+
+/* Aquí irán los estilos de las imágenes dentro de .card */
+/* Sugerencia: width: 100% para que se adapte al contenedor */
+
+.card img {
+  /* Ancho del 100% del contenedor (300px) */
+  width: 100%;
+
+  /* Altura automática para mantener proporción */
+  height: auto;
+
+  /* Display block para eliminar espacio inferior */
+  display: block;
+
+  /* Margen negativo para que la imagen toque los bordes */
+  margin: -16px -16px 16px -16px;
+
+  /* Bordes redondeados en la parte superior */
+  border-radius: 8px 8px 0 0;
+}
+
+/* ============================================
+   ESTILOS DE LOS TÍTULOS (H3)
+   ============================================ */
+
+/* Aquí irán los estilos de los h3 dentro de .card */
+
+.card h3 {
+  /* Color del título */
+  color: #333;
+
+  /* Tamaño de fuente */
+  font-size: 1.5rem;
+
+  /* Margen inferior */
+  margin: 0 0 10px 0;
+
+  /* Peso de la fuente */
+  font-weight: bold;
+}
+
+/* ============================================
+   ESTILOS DE LOS PÁRRAFOS
+   ============================================ */
+
+/* Aquí irán los estilos de los párrafos dentro de .card */
+
+.card p {
+  /* Color del texto */
+  color: #666;
+
+  /* Tamaño de fuente */
+  font-size: 0.95rem;
+
+  /* Altura de línea para mejor legibilidad */
+  line-height: 1.6;
+
+  /* Margen inferior */
+  margin: 0 0 20px 0;
+}
+
+/* ============================================
+   ESTILOS DEL BOTÓN
+   ============================================ */
+
+/* Aquí irán los estilos de los botones */
+
+.card button {
+  /* Ancho completo de la tarjeta */
+  width: 100%;
+
+  /* Espaciado interno del botón */
+  padding: 12px 20px;
+
+  /* Color de fondo azul */
+  background-color: #4a90e2;
+
+  /* Texto blanco */
+  color: white;
+
+  /* Eliminar borde por defecto */
+  border: none;
+
+  /* Bordes redondeados */
+  border-radius: 4px;
+
+  /* Tamaño de fuente */
+  font-size: 1rem;
+
+  /* Peso de la fuente */
+  font-weight: bold;
+
+  /* Cambiar cursor al pasar sobre el botón */
+  cursor: pointer;
+
+  /* Transición suave para efectos hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilos cuando el mouse pasa sobre el botón */
+.card button:hover {
+  /* Color más oscuro al hacer hover */
+  background-color: #357abd;
+
+  /* Efecto de elevación sutil */
+  transform: translateY(-2px);
+}
+
+/* Estilos cuando se presiona el botón */
+.card button:active {
+  /* Efecto de presión */
+  transform: translateY(0);
+}
+
+/* ============================================
+   EFECTO HOVER (BONUS)
+   ============================================ */
+
+/* TAREA 7 (BONUS): Añade box-shadow al hacer hover */
+/* Ejemplo: box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+
+.card:hover {
+  /* Sombra pronunciada al hacer hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* Efecto de elevación sutil */
+  transform: translateY(-5px);
+}
+
+/* ============================================
+   ESTILOS DEL FOOTER
+   ============================================ */
+
+/* Aquí irán los estilos del footer */
+
+footer {
+  /* Fondo oscuro igual que el header */
+  background-color: #333;
+
+  /* Texto blanco */
+  color: white;
+
+  /* Centrar el texto */
+  text-align: center;
+
+  /* Espaciado interno */
+  padding: 20px;
+
+  /* Margen superior para separarlo del contenido */
+  margin-top: 40px;
+
+  /* Sombra superior */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el párrafo dentro del footer */
+footer p {
+  /* Eliminar margen */
+  margin: 0;
+
+  /* Tamaño de fuente */
+  font-size: 0.9rem;
+
+  /* Color más claro */
+  color: #ccc;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN (OPCIONAL)
+   ============================================ */
+
+/* Media query para tablets y móviles */
+@media (max-width: 768px) {
+  /* Ajustar el header */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  /* Ajustar las tarjetas en pantallas pequeñas */
+  .card {
+    /* Hacer las tarjetas responsivas */
+    width: 100%;
+    max-width: 350px;
+
+    /* Mostrar como bloque para apilar verticalmente */
+    display: block;
+
+    /* Centrar las tarjetas */
+    margin: 20px auto;
+  }
+
+  /* Ajustar el contenedor */
+  .card-container {
+    width: 95%;
+    padding: 10px 0;
+  }
+}
+
+/* Media query para móviles pequeños */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    margin: 15px auto;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ============================================
+   ESTILOS ADICIONALES
+   ============================================ */
+
+/* Mejorar la selección de texto */
+::selection {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
