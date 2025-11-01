@@ -1,0 +1,429 @@
+/* ============================================
+   EJERCICIO DE FUNDAMENTOS DE CSS
+   ============================================
+   
+   Completa los estilos según las tareas
+   indicadas en el archivo README.md
+   
+   Recuerda:
+   - Usa selectores apropiados (elemento, clase, ID)
+   - Escribe comentarios para explicar tu código
+   - Experimenta con diferentes valores
+   ============================================ */
+
+/* ============================================
+   ESTILOS DEL BODY
+   ============================================ */
+
+/* TAREA 1: Aquí irán los estilos del body */
+body {
+  /* Color de fondo gris claro para toda la página */
+  background-color: #f4f4f4;
+
+  /* Resetear márgenes por defecto del navegador */
+  margin: 0;
+  padding: 0;
+
+  /* Fuente principal del sitio */
+  font-family: "Arial", "Helvetica", sans-serif;
+
+  /* Color del texto por defecto */
+  color: #333;
+
+  /* Altura de línea para mejor legibilidad */
+  line-height: 1.6;
+}
+
+/* ============================================
+   ESTILOS DEL HEADER
+   ============================================ */
+
+/* TAREA 2: Aquí irán los estilos del header y el h1 */
+header {
+  /* Fondo oscuro para el header */
+  background-color: #333;
+
+  /* Texto blanco para contraste */
+  color: white;
+
+  /* Espaciado interno del header */
+  padding: 30px 20px;
+
+  /* Centrar el contenido */
+  text-align: center;
+
+  /* Sombra sutil para darle profundidad */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para el h1 dentro del header */
+header h1 {
+  /* Centrar el texto del h1 */
+  text-align: center;
+
+  /* Color azul para el título principal */
+  color: #4da6ff;
+
+  /* Eliminar margen superior e inferior */
+  margin: 0 0 10px 0;
+
+  /* Tamaño de fuente grande */
+  font-size: 2.5rem;
+
+  /* Peso de la fuente */
+  font-weight: bold;
+}
+
+/* Estilos para el párrafo dentro del header */
+header p {
+  /* Color más claro para el subtítulo */
+  color: #cccccc;
+
+  /* Tamaño de fuente del subtítulo */
+  font-size: 1.1rem;
+
+  /* Eliminar márgenes */
+  margin: 0;
+}
+
+/* ============================================
+   ESTILOS DEL MAIN
+   ============================================ */
+
+/* Aquí irán los estilos del contenido principal */
+main {
+  /* Ancho máximo del contenido */
+  max-width: 1000px;
+
+  /* Centrar el main horizontalmente */
+  margin: 0 auto;
+
+  /* Espaciado vertical */
+  padding: 20px;
+}
+
+/* Estilos para los h2 */
+h2 {
+  /* Color del título secundario */
+  color: #333;
+
+  /* Tamaño de fuente */
+  font-size: 2rem;
+
+  /* Margen inferior */
+  margin-bottom: 15px;
+
+  /* Borde inferior decorativo */
+  border-bottom: 3px solid #0066cc;
+
+  /* Espaciado interno para el borde */
+  padding-bottom: 10px;
+}
+
+/* Estilos para los h3 */
+h3 {
+  /* Color del título terciario */
+  color: #0066cc;
+
+  /* Tamaño de fuente */
+  font-size: 1.5rem;
+
+  /* Márgenes */
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+/* ============================================
+   ESTILOS DEL CONTAINER
+   ============================================ */
+
+/* TAREA 3: Aquí irán los estilos del div con clase "container" */
+.container {
+  /* Fondo blanco para destacar del fondo gris */
+  background-color: white;
+
+  /* Margen exterior (separación con otros elementos) */
+  margin: 20px auto;
+
+  /* Relleno interior (espacio dentro del contenedor) */
+  padding: 30px;
+
+  /* Bordes redondeados para un diseño moderno */
+  border-radius: 8px;
+
+  /* Sombra sutil para dar profundidad */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Borde sutil opcional */
+  border: 1px solid #e0e0e0;
+}
+
+/* ============================================
+   ESTILOS DE PÁRRAFOS
+   ============================================ */
+
+/* TAREA 4: Aquí irán los estilos de los párrafos */
+p {
+  /* Tamaño de fuente para los párrafos */
+  font-size: 18px;
+
+  /* Altura de línea para mejor legibilidad */
+  line-height: 1.6;
+
+  /* Color del texto */
+  color: #333;
+
+  /* Margen inferior para separación entre párrafos */
+  margin-bottom: 15px;
+
+  /* Espaciado entre letras */
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   ESTILOS DE ENLACES
+   ============================================ */
+
+/* TAREA 5: Aquí irán los estilos de los enlaces */
+a {
+  /* Quitar el subrayado por defecto */
+  text-decoration: none;
+
+  /* Color azul para los enlaces */
+  color: #0066cc;
+
+  /* Peso de la fuente */
+  font-weight: bold;
+
+  /* Transición suave al hacer hover */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Estilos cuando el mouse pasa sobre el enlace */
+a:hover {
+  /* Color más oscuro al hacer hover */
+  color: #004499;
+
+  /* Mostrar subrayado al hacer hover */
+  text-decoration: underline;
+}
+
+/* Estilos para enlaces visitados */
+a:visited {
+  /* Color púrpura para enlaces visitados */
+  color: #551a8b;
+}
+
+/* ============================================
+   ESTILOS DE LISTAS
+   ============================================ */
+
+/* Aquí puedes estilizar las listas */
+ul {
+  /* Tipo de viñeta cuadrada */
+  list-style-type: square;
+
+  /* Espaciado izquierdo */
+  padding-left: 25px;
+
+  /* Margen inferior */
+  margin-bottom: 20px;
+
+  /* Color de las viñetas */
+  color: #0066cc;
+}
+
+/* Estilos para los elementos de la lista */
+li {
+  /* Margen inferior entre elementos */
+  margin-bottom: 10px;
+
+  /* Altura de línea */
+  line-height: 1.6;
+
+  /* Color del texto (diferente al color de la viñeta) */
+  color: #333;
+
+  /* Tamaño de fuente */
+  font-size: 17px;
+}
+
+/* ============================================
+   ESTILOS DE BOTONES
+   ============================================ */
+
+/* Aquí puedes estilizar el botón */
+button {
+  /* Color de fondo azul */
+  background-color: #0066cc;
+
+  /* Texto blanco */
+  color: white;
+
+  /* Espaciado interno del botón */
+  padding: 12px 30px;
+
+  /* Quitar borde por defecto */
+  border: none;
+
+  /* Bordes redondeados */
+  border-radius: 5px;
+
+  /* Tamaño de fuente */
+  font-size: 16px;
+
+  /* Peso de la fuente */
+  font-weight: bold;
+
+  /* Cambiar cursor al pasar sobre el botón */
+  cursor: pointer;
+
+  /* Transición suave para efectos hover */
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+
+  /* Margen superior para separación */
+  margin-top: 20px;
+
+  /* Mostrar como bloque para centrado fácil */
+  display: inline-block;
+
+  /* Sombra del botón */
+  box-shadow: 0 4px 6px rgba(0, 102, 204, 0.3);
+}
+
+/* Estilos cuando el mouse pasa sobre el botón */
+button:hover {
+  /* Color más oscuro al hacer hover */
+  background-color: #004499;
+
+  /* Efecto de elevación */
+  transform: translateY(-2px);
+
+  /* Sombra más pronunciada */
+  box-shadow: 0 6px 12px rgba(0, 102, 204, 0.4);
+}
+
+/* Estilos cuando se presiona el botón */
+button:active {
+  /* Efecto de presión */
+  transform: translateY(0);
+
+  /* Sombra reducida */
+  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.3);
+}
+
+/* ============================================
+   ESTILOS DE LA INFO-BOX
+   ============================================ */
+
+/* Aquí puedes estilizar la caja de información */
+.info-box {
+  /* Fondo azul claro */
+  background-color: #e8f4f8;
+
+  /* Borde izquierdo grueso y azul */
+  border-left: 4px solid #0066cc;
+
+  /* Espaciado interno */
+  padding: 20px 25px;
+
+  /* Margen exterior */
+  margin: 30px 20px;
+
+  /* Bordes ligeramente redondeados */
+  border-radius: 4px;
+
+  /* Sombra sutil */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para el h3 dentro de info-box */
+.info-box h3 {
+  /* Eliminar margen superior */
+  margin-top: 0;
+
+  /* Color azul para el título */
+  color: #0066cc;
+
+  /* Tamaño de fuente */
+  font-size: 1.4rem;
+}
+
+/* Estilos para el párrafo dentro de info-box */
+.info-box p {
+  /* Margen inferior reducido */
+  margin-bottom: 0;
+
+  /* Tamaño de fuente */
+  font-size: 16px;
+
+  /* Color del texto */
+  color: #2c5282;
+}
+
+/* ============================================
+   ESTILOS DEL FOOTER
+   ============================================ */
+
+/* Aquí irán los estilos del footer */
+footer {
+  /* Fondo oscuro igual que el header */
+  background-color: #333;
+
+  /* Texto blanco */
+  color: white;
+
+  /* Centrar el texto */
+  text-align: center;
+
+  /* Espaciado interno */
+  padding: 25px 20px;
+
+  /* Margen superior para separarlo del contenido */
+  margin-top: 40px;
+
+  /* Sombra superior */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los párrafos dentro del footer */
+footer p {
+  /* Reducir margen vertical */
+  margin: 8px 0;
+
+  /* Tamaño de fuente del footer */
+  font-size: 14px;
+
+  /* Color del texto */
+  color: #cccccc;
+}
+
+/* ============================================
+   ESTILOS ADICIONALES (OPCIONAL)
+   ============================================
+   
+   Aquí puedes agregar estilos adicionales
+   para personalizar aún más la página
+   
+   ============================================ */
+
+/* Reset universal para mejor consistencia */
+* {
+  /* Modelo de caja border-box para cálculos más fáciles */
+  box-sizing: border-box;
+}
+
+/* Estilos para mejorar la selección de texto */
+::selection {
+  /* Color de fondo al seleccionar texto */
+  background-color: #0066cc;
+
+  /* Color del texto seleccionado */
+  color: white;
+}
+
+/* Efecto de scroll suave */
+html {
+  scroll-behavior: smooth;
+}

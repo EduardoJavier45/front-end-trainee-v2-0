@@ -30,6 +30,8 @@
 */
 
 :root {
+  /* :root= Definición global de variables CSS */
+
   /* Colores principales - Facilita cambios de tema */
   --color-primary: #6366f1; /* Índigo - Color principal */
   --color-primary-dark: #4f46e5; /* Índigo oscuro - Hover states */
@@ -99,8 +101,9 @@
    - Comportamiento más intuitivo
 */
 *,
-*::before,
+*::before, /* :before: pseudo-elemento antes del contenido */
 *::after {
+  /* :after: pseudo-elemento después del contenido */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
